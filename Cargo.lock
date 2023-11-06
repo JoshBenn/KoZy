@@ -626,6 +626,11 @@ dependencies = [
 name = "kozy_gui"
 version = "0.1.0"
 dependencies = [
+ "half",
+ "heck",
+ "indexmap",
+ "libloading 0.8.1",
+ "raw-window-handle 0.6.0",
  "vulkano",
  "vulkano-shaders",
  "vulkano-util",
