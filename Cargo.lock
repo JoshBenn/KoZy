@@ -626,7 +626,9 @@ dependencies = [
 name = "kozy_gui"
 version = "0.1.0"
 dependencies = [
+ "raw-window-handle 0.6.0",
  "vulkano",
+ "vulkano-macros",
  "vulkano-shaders",
  "vulkano-util",
  "vulkano-win",
