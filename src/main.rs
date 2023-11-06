@@ -28,7 +28,9 @@ use vulkano::{
     },
     render_pass::{Framebuffer, FramebufferCreateInfo, RenderPass, Subpass},
     sync::{self, GpuFuture},
-    swapchain::{Swapchain, Surface},
+    swapchain::{
+        acquire_next_image, Surface, Swapchain, SwapchainCreateInfo, SwapchainPresentInfo
+    },
     Validated, Version, VulkanError, VulkanLibrary,
 };
 
@@ -46,31 +48,31 @@ struct WindowSurface {
     previous_frame_end: Option<Box<dyn GpuFuture>>,
 }
 
-fn main() {
-    //Create the instance
-    let _event_loop = EventLoop::new().unwrap();
+fn main() -> Result<(), impl Error> {
+/*    //Create the instance
+    let event_loop = EventLoop::new().unwrap();
     
-    
-    let _instance = {
+    //Create a new instance
+    let instance = {
         //Create library
-        let _vulk_library = VulkanLibrary::new().unwrap();
+        let vulk_library = VulkanLibrary::new().unwrap();
 
-        let _vulk_extensions = Surface::required_extensions(&_event_loop).unwrap();
+        //let _vulk_extensions = Surface::required_extensions(&_event_loop).unwrap();
         //Create extensions
-        /*let _vulk_extensions = InstanceExtensions{
+        let vulk_extensions = InstanceExtensions{
             khr_surface: true,            //Required default for drawing
             khr_xlib_surface: true,       //For x11 Library
             khr_wayland_surface: true,    //For wayland library
             //khr_android_surface: true,   //For android
             //khr_win32_surface: true,     //For win32
             .. InstanceExtensions::empty()
-        };*/
+        };
         
         Instance::new(
             _vulk_library,
             InstanceCreateInfo {
-                enabled_extensions: _vulk_extensions,
-                //flags: InstanceCreateFlags::ENUMERATE_PORTABILITY, //For macOS
+                enabled_extensions: vulk_extensions,
+                flags: InstanceCreateFlags::ENUMERATE_PORTABILITY, //For macOS
                 max_api_version: Some(Version::V1_1),
                 ..Default::default()
                 },
@@ -78,14 +80,14 @@ fn main() {
     };
 
     //Create the event loop
-    let _window = Arc::new(WindowBuilder::new().build(&_event_loop).unwrap());
-    let _surface = Surface::from_window(_instance.clone(), _window.clone()).unwrap();
+    let window = Arc::new(WindowBuilder::new().build(&event_loop).unwrap());
+    let surface = Surface::from_window(instance.clone(), window.clone()).unwrap();
 
     //ControlFlow changes window behavior:
     // -- Wait = Wait for events, Poll = continuous
-    _event_loop.set_control_flow(ControlFlow::Wait);
+    event_loop.set_control_flow(ControlFlow::Wait);
 
-    /*event_loop.run(move |event, elwt| {
+    event_loop.run(move |event, elwt| {
         match event {
             Event::WindowEvent {
                 event: WindowEvent::CloseRequested,
@@ -108,7 +110,7 @@ fn main() {
             },
             _ => ()
         }
-    });*/
+    });
     
     //Create the window
     //let window = build_window();
@@ -209,6 +211,6 @@ fn main() {
             //Any other event
             _=>(),
         }
-    });*/
+ */   });*/
     println!("made it bois");
 }
