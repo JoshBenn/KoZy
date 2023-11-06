@@ -697,6 +697,7 @@ fn window_size_dependent_setup(
         .iter()
         .map(|image| ImageView::new_default(image.clone()).unwrap())
         .collect::<Vec<_>>()
+}
     
     
     //------------------------------------------------------------------------------------------------------------------
@@ -863,5 +864,5 @@ fn window_size_dependent_setup(
             _=>(),
         }
  */   });*/
-    println!("made it bois");
-}
+  /*  println!("made it bois");
+}*/
