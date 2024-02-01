@@ -1,4 +1,4 @@
-use crate::color;
+use crate::application::color;
 
 
 pub enum Component {
